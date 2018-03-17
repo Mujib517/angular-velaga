@@ -12,13 +12,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { AppRoutingModule } from './shared/app.routing.module';
 
-const ROUTES: Route[] = [{ path: '', component: HomeComponent },
-{ path: 'about', component: AboutComponent },
-{ path: 'contact', component: ContactComponent },
-{ path: 'users', component: UsersComponent },
-{ path: 'users/:id', component: UserDetailComponent },
-{ path: '**', redirectTo: '' }];
 
 
 @NgModule({
@@ -36,8 +31,7 @@ const ROUTES: Route[] = [{ path: '', component: HomeComponent },
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES)
-  ],
+    AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { AppRoutingModule } from './shared/app.routing.module';
+import { UserComponent } from './user/user.component';
 
 
 
@@ -26,7 +27,8 @@ import { AppRoutingModule } from './shared/app.routing.module';
     HeaderComponent,
     FooterComponent,
     UsersComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

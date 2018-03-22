@@ -7,12 +7,9 @@ import { HttpClient } from '@angular/common/http';
     <h1>Users</h1>
 
     <div class="col-md-7">
-      <div class="well" *ngFor="let user of users">
-       <a [routerLink]="'/users/'+user.login"> <h3>{{user.login}}</h3></a>
-        <img [src]="user.avatar_url" width="100" height="100" class="img img-circle"/>
-      </div>
+      <div class="well" *ngFor="let u of users">
+       <app-user [user]="u"></app-user>
     </div>
-
   `,
   styles: []
 })
@@ -24,15 +21,18 @@ export class UsersComponent implements OnInit {
     this.http = http;
   }
 
+  //db
+  //file io
+  // timers setTimeout setInterval
+  // web service calls
   ngOnInit() {
     this.http.get('https://api.github.com/users')
       .subscribe(
-      (resp) => {
-        console.log(resp);
-        this.users = resp;
-      },
-      (err) => console.log(err)
+        (resp) => this.users = resp,
+        (err) => console.log(err)
       )
+
+    console.log("after request");
   }
 
 }

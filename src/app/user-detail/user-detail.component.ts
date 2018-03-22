@@ -35,13 +35,9 @@ export class UserDetailComponent implements OnInit {
     let id = this.route.snapshot.params.id;
     this.http.get('https://api.github.com/users/' + id)
       .subscribe(
-      this.onSuccess,
+        res => this.user = res,
       this.error
       )
-  }
-
-  onSuccess(res) {
-    this.user = res
   }
 
   error = (err) => console.log(err)

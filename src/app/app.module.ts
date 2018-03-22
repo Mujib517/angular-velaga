@@ -14,6 +14,8 @@ import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { AppRoutingModule } from './shared/app.routing.module';
 import { UserComponent } from './user/user.component';
+import { ConsoleLogger } from './shared/console.logger.service';
+import { FileLogger } from './shared/file.logger.service';
 
 
 
@@ -34,7 +36,8 @@ import { UserComponent } from './user/user.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule],
-  providers: [],
+  providers: [
+    { provide: ConsoleLogger, useClass: FileLogger }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

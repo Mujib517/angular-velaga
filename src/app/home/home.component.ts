@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConsoleLogger } from '../shared/console.logger.service';
 
 @Component({
   selector: 'app-home',
@@ -6,4 +7,9 @@ import { Component } from '@angular/core';
     <h1>Home Page</h1>
   `
 })
-export class HomeComponent{}
+export class HomeComponent {
+  //dependency injection
+  constructor(svc:ConsoleLogger,time:number) {
+    svc.warn("Component took a lot of time to load");
+  }
+}

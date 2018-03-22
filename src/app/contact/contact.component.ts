@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConsoleLogger } from '../shared/console.logger.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
   `,
   styles: []
 })
-export class ContactComponent{}
+export class ContactComponent{
+  
+  constructor(svc:ConsoleLogger) {
+    svc.error("Component took a lot of time to load");
+  }
+}

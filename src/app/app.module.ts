@@ -18,6 +18,8 @@ import { ConsoleLogger } from './shared/console.logger.service';
 import { FileLogger } from './shared/file.logger.service';
 import { UserService } from './shared/user.service';
 import { UserResolver } from './shared/user.resolver';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { FollwersComponent } from './follwers/follwers.component';
 
 
 
@@ -32,7 +34,9 @@ import { UserResolver } from './shared/user.resolver';
     FooterComponent,
     UsersComponent,
     UserDetailComponent,
-    UserComponent
+    UserComponent,
+    ReviewsComponent,
+    FollwersComponent
   ],
   imports: [
     BrowserModule,

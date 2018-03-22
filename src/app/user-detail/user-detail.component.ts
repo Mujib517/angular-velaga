@@ -22,6 +22,13 @@ import { ActivatedRoute } from '@angular/router';
       </div>
     </div>
     </div>
+    <div class="col-md-5">
+      <ul class="nav-tabs nav">
+        <li routerLinkActive="active"><a routerLink="reviews">Reviews</a></li>
+        <li  routerLinkActive="active"><a routerLink="followers">Followers</a></li>
+      </ul>
+      <router-outlet></router-outlet>
+    </div>
   `
 })
 export class UserDetailComponent implements OnInit {

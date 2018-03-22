@@ -9,7 +9,7 @@ import { ConsoleLogger } from '../shared/console.logger.service';
 })
 export class HomeComponent {
   //dependency injection
-  constructor(svc:ConsoleLogger,time:number) {
+  constructor(svc:ConsoleLogger) {
     svc.warn("Component took a lot of time to load");
   }
 }

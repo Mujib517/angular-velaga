@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from '../shared/user.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -15,10 +17,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersComponent implements OnInit {
   users: any;
-  http: HttpClient;
 
-  constructor(http: HttpClient) {
-    this.http = http;
+  constructor(private userSvc: UserService, private route: ActivatedRoute) {
+
   }
 
   //db
@@ -26,13 +27,12 @@ export class UsersComponent implements OnInit {
   // timers setTimeout setInterval
   // web service calls
   ngOnInit() {
-    this.http.get('https://api.github.com/users')
-      .subscribe(
-        (resp) => this.users = resp,
-        (err) => console.log(err)
-      )
 
-    console.log("after request");
+    // this.userSvc.get().subscribe(
+    //   (resp) => this.users = resp,
+    //   (err) => console.log(err)
+    // )
+    this.users = this.route.snapshot.data.userData;
   }
 
 }

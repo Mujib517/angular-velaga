@@ -16,6 +16,8 @@ import { AppRoutingModule } from './shared/app.routing.module';
 import { UserComponent } from './user/user.component';
 import { ConsoleLogger } from './shared/console.logger.service';
 import { FileLogger } from './shared/file.logger.service';
+import { UserService } from './shared/user.service';
+import { UserResolver } from './shared/user.resolver';
 
 
 
@@ -37,6 +39,8 @@ import { FileLogger } from './shared/file.logger.service';
     HttpClientModule,
     AppRoutingModule],
   providers: [
+    UserService,
+    UserResolver,
     { provide: ConsoleLogger, useClass: FileLogger }],
   bootstrap: [AppComponent]
 })

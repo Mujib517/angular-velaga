@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-user-detail',
   template: `
     <h1>User Detail</h1>
-    <div class="col-md-6">
+    <div *ngIf="user" class="col-md-6">
     <div class="panel panel-primary">
       <div class="panel-heading">
         {{user.name}}  {{user.login}}
@@ -33,7 +33,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserDetailComponent implements OnInit {
 
-  private user: any = {};
+  private user: any;
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {
   }

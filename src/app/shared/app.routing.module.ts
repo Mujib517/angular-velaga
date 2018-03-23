@@ -14,7 +14,6 @@ const CHILDREN: Route[] = [
     { path: 'followers', component: FollwersComponent }
 ];
 
-
 const ROUTES: Route[] = [{ path: '', component: HomeComponent },
 { path: 'about', component: AboutComponent },
 { path: 'contact', component: ContactComponent },

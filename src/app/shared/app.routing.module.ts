@@ -9,6 +9,7 @@ import { UserResolver } from "./user.resolver";
 import { ReviewsComponent } from "../reviews/reviews.component";
 import { FollwersComponent } from "../follwers/follwers.component";
 import { LazyComponent } from "../lazy/lazy.component";
+import { CanActivateGaurd } from "./can-activate.gaurd";
 
 const CHILDREN: Route[] = [
     { path: '', pathMatch: 'full', redirectTo: 'reviews' },
@@ -18,13 +19,21 @@ const CHILDREN: Route[] = [
 
 const ROUTES: Route[] = [{ path: '', component: HomeComponent },
 { path: 'about', component: AboutComponent },
-{ path: 'contact', component: ContactComponent },
-{ path: 'users', component: UsersComponent, resolve: { userData: UserResolver } },
+{
+    path: 'contact',
+    canDeactivate: [CanActivateGaurd],
+    component: ContactComponent
+},
+{
+    path: 'users',
+    canActivate: [CanActivateGaurd], component: UsersComponent, resolve: { userData: UserResolver }
+},
 { path: 'users/:id', component: UserDetailComponent, children: CHILDREN },
-{ path: 'lazy', component: LazyComponent, 
-loadChildren: 'app/shared/lazy.module#LazyModule' },
+{
+    path: 'lazy', component: LazyComponent,
+    loadChildren: 'app/shared/lazy.module#LazyModule'
+},
 { path: '**', redirectTo: '' }];
-
 
 @NgModule({
     imports: [RouterModule.forRoot(ROUTES)],

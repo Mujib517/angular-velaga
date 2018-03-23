@@ -21,6 +21,7 @@ import { UserResolver } from './shared/user.resolver';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { FollwersComponent } from './follwers/follwers.component';
 import { LazyComponent } from './lazy/lazy.component';
+import { CanActivateGaurd } from './shared/can-activate.gaurd';
 
 
 
@@ -47,6 +48,7 @@ import { LazyComponent } from './lazy/lazy.component';
   providers: [
     UserService,
     UserResolver,
+    CanActivateGaurd,
     { provide: ConsoleLogger, useClass: FileLogger }],
   bootstrap: [AppComponent]
 })

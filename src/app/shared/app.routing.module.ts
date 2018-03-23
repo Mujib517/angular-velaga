@@ -10,6 +10,7 @@ import { ReviewsComponent } from "../reviews/reviews.component";
 import { FollwersComponent } from "../follwers/follwers.component";
 
 const CHILDREN: Route[] = [
+    { path: '', pathMatch: 'full', redirectTo: 'reviews' },
     { path: 'reviews', component: ReviewsComponent },
     { path: 'followers', component: FollwersComponent }
 ];

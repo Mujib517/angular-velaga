@@ -8,6 +8,7 @@ import { UserDetailComponent } from "../user-detail/user-detail.component";
 import { UserResolver } from "./user.resolver";
 import { ReviewsComponent } from "../reviews/reviews.component";
 import { FollwersComponent } from "../follwers/follwers.component";
+import { LazyComponent } from "../lazy/lazy.component";
 
 const CHILDREN: Route[] = [
     { path: '', pathMatch: 'full', redirectTo: 'reviews' },
@@ -20,6 +21,8 @@ const ROUTES: Route[] = [{ path: '', component: HomeComponent },
 { path: 'contact', component: ContactComponent },
 { path: 'users', component: UsersComponent, resolve: { userData: UserResolver } },
 { path: 'users/:id', component: UserDetailComponent, children: CHILDREN },
+{ path: 'lazy', component: LazyComponent, 
+loadChildren: 'app/shared/lazy.module#LazyModule' },
 { path: '**', redirectTo: '' }];
 
 

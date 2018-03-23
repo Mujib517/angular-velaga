@@ -14,6 +14,7 @@ import { Component, OnInit } from '@angular/core';
     <li><a routerLink="/contact">Contact</a></li>
     <li><a routerLink="/users">Users</a></li>
     <li><a routerLink="/products">Products</a></li>
+    <li><a routerLink="/lazy">Lazy</a></li>
   </ul>
 </div>
 </nav>

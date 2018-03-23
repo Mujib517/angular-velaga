@@ -20,6 +20,7 @@ import { UserService } from './shared/user.service';
 import { UserResolver } from './shared/user.resolver';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { FollwersComponent } from './follwers/follwers.component';
+import { LazyComponent } from './lazy/lazy.component';
 
 
 
@@ -36,7 +37,8 @@ import { FollwersComponent } from './follwers/follwers.component';
     UserDetailComponent,
     UserComponent,
     ReviewsComponent,
-    FollwersComponent
+    FollwersComponent,
+    LazyComponent
   ],
   imports: [
     BrowserModule,

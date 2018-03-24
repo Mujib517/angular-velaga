@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-users',
   template: `
     <h1>Users</h1>
-
+    <a routerLink="/users/new" class="btn btn-danger">Add New User</a>
     <div class="col-md-7">
       <div class="well" *ngFor="let u of users">
        <app-user [user]="u"></app-user>

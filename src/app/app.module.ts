@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +23,7 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { FollwersComponent } from './follwers/follwers.component';
 import { LazyComponent } from './lazy/lazy.component';
 import { CanActivateGaurd } from './shared/can-activate.gaurd';
+import { NewUserComponent } from './new-user/new-user.component';
 
 
 
@@ -39,12 +41,14 @@ import { CanActivateGaurd } from './shared/can-activate.gaurd';
     UserComponent,
     ReviewsComponent,
     FollwersComponent,
-    LazyComponent
+    LazyComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule],
+    AppRoutingModule,
+    FormsModule],
   providers: [
     UserService,
     UserResolver,

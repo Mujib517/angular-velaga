@@ -10,6 +10,7 @@ import { ReviewsComponent } from "../reviews/reviews.component";
 import { FollwersComponent } from "../follwers/follwers.component";
 import { LazyComponent } from "../lazy/lazy.component";
 import { CanActivateGaurd } from "./can-activate.gaurd";
+import { NewUserComponent } from "../new-user/new-user.component";
 
 const CHILDREN: Route[] = [
     { path: '', pathMatch: 'full', redirectTo: 'reviews' },
@@ -28,6 +29,7 @@ const ROUTES: Route[] = [{ path: '', component: HomeComponent },
     path: 'users',
     canActivate: [CanActivateGaurd], component: UsersComponent, resolve: { userData: UserResolver }
 },
+{ path: 'users/new', component: NewUserComponent },
 { path: 'users/:id', component: UserDetailComponent, children: CHILDREN },
 {
     path: 'lazy', component: LazyComponent,

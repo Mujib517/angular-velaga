@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -37,16 +38,16 @@ export class UserDetailComponent implements OnInit {
 
   private user: any;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {
+  constructor(private svc: UserService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     let id = this.route.snapshot.params.id;
-    this.http.get('https://api.github.com/users/' + id)
-      .subscribe(
-        res => this.user = res,
-      this.error
-      )
+    this.svc.getById(id)
+    .subscribe(
+      res => this.user = res,
+    this.error
+    );
   }
 
   error = (err) => console.log(err)

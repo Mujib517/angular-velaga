@@ -11,4 +11,8 @@ export class UserService {
     get() {
         return this.http.get('https://api.github.com/users');
     }
+
+    getById(id){
+        return this.http.get('https://api.github.com/users/' + id);
+    }
 }
